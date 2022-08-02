@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+     <style>
+        .container__slider{
+    max-width: 2000px;
+    height: 1000px;
+    margin: auto;
+    padding-left: 0;
+
+}
+
+input[type=radio]{
+    display: none;
+}
+
+.container{
+    width: 1000%;
+    max-width: 1500px;
+    height: 100%;
+    max-height: 600px;
+    transform-style: preserve-3d;
+}
+
+.cards{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.card{
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+
+#item-2:checked ~ .cards #selector-1,
+#item-1:checked ~ .cards #selector-3,
+#item-3:checked ~ .cards #selector-2{
+    transform: translateX(-40%) scale(0.8);
+    opacity: 0.6;
+    z-index: 0;
+}
+
+#item-3:checked ~ .cards #selector-1,
+#item-1:checked ~ .cards #selector-2,
+#item-2:checked ~ .cards #selector-3{
+    transform: translateX(40%) scale(0.8);
+    opacity: 0.6;
+    z-index: 0;
+}
+
+#item-1:checked ~ .cards #selector-1,
+#item-2:checked ~ .cards #selector-2,
+#item-3:checked ~ .cards #selector-3{
+    transform: translateX(0) scale(1);
+    z-index: 1;
+}
+     </style>
+     
+</head>
+<body>
+    <div class="container__slider">
+
+        <div class="container">
+            <input type="radio" name="slider" id="item-1" checked>
+            <input type="radio" name="slider" id="item-2">
+            <input type="radio" name="slider" id="item-3">
+
+            <div class="cards">
+                <label class="card" for="item-1" id="selector-1">
+                    <img src="sup1.jpeg">
+                </label>
+                <label class="card" for="item-2" id="selector-2">
+                    <img src="sup2.jpeg">
+                </label>
+                <label class="card" for="item-3" id="selector-3">
+                    <img src="sup3.jpeg">
+                </label>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
